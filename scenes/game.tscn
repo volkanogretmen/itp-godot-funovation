@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbl4rxux1bp4b"]
+[gd_scene load_steps=8 format=3 uid="uid://dbl4rxux1bp4b"]
 
-[ext_resource type="PackedScene" uid="uid://dylpg8vxeay4i" path="res://Scenes/player.tscn" id="1_iestt"]
+[ext_resource type="PackedScene" uid="uid://dylpg8vxeay4i" path="res://scenes/player.tscn" id="1_iestt"]
 [ext_resource type="Texture2D" uid="uid://chkqhaivphbeo" path="res://images/background2.jpeg" id="1_k3ecp"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wngho"]
 [ext_resource type="PackedScene" uid="uid://dnnrjkr14agma" path="res://scenes/document.tscn" id="3_ho5f8"]
 [ext_resource type="PackedScene" uid="uid://bpcg7hxkydfxv" path="res://scenes/spawner.tscn" id="4_muhjr"]
+[ext_resource type="AudioStream" uid="uid://darlcvy4c6l6g" path="res://audio/background_music.mp3" id="6_k5gbs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eb3pg"]
 
@@ -36,3 +37,7 @@ spawn_interval = 0.3
 
 [node name="Document" parent="." instance=ExtResource("3_ho5f8")]
 position = Vector2(-197, -720)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_k5gbs")
+autoplay = true
