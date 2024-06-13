@@ -23,12 +23,16 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	GameManager.add_point()
+	add_point()
 	var audio = AudioStreamPlayer.new()
 	audio.stream = sound
 	add_sibling(audio)
 	audio.play()
 	queue_free()
+
+func add_point():
+	score = score + 1
+	print(score)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2oqi"]
