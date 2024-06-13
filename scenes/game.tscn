@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbl4rxux1bp4b"]
+[gd_scene load_steps=5 format=3 uid="uid://dbl4rxux1bp4b"]
 
-[ext_resource type="PackedScene" uid="uid://dylpg8vxeay4i" path="res://scenes/player.tscn" id="1_iestt"]
+[ext_resource type="PackedScene" uid="uid://dylpg8vxeay4i" path="res://Scenes/player.tscn" id="1_iestt"]
 [ext_resource type="Texture2D" uid="uid://chkqhaivphbeo" path="res://images/background2.jpeg" id="1_k3ecp"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wngho"]
-[ext_resource type="PackedScene" uid="uid://bpcg7hxkydfxv" path="res://scenes/spawner.tscn" id="4_muhjr"]
+[ext_resource type="PackedScene" uid="uid://bpcg7hxkydfxv" path="res://Scenes/spawner.tscn" id="4_muhjr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eb3pg"]
 

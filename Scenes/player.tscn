@@ -70,6 +70,7 @@ animations = [{
 radius = 63.0079
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_hadjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
