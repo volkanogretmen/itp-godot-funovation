@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Itp-godot-funovation"
-run/main_scene="res://Scenes/player.tscn"
+run/main_scene="res://Scenes/blokje.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
