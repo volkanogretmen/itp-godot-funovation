@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	# Apply gravity to the velocity
-	velocity.y += gravity * delta
+	velocity.y += gravity * delta * 0.3
 	
 	# Move the Area2D
 	position += velocity * delta * 0.3

@@ -4,18 +4,19 @@
 [ext_resource type="Script" path="res://scripts/document.gd" id="2_bqtr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2oqi"]
-size = Vector2(62.3125, 88.75)
+size = Vector2(44, 62)
 
 [node name="Document" type="Area2D"]
 collision_mask = 2
 script = ExtResource("2_bqtr2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.99998, 1)
-scale = Vector2(0.0667363, 0.0667363)
+position = Vector2(1, -1)
+scale = Vector2(0.0426532, 0.0426532)
 texture = ExtResource("1_k4fyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_m2oqi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
