@@ -1,20 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1mtxoiq5248n"]
+[gd_scene load_steps=9 format=3 uid="uid://dylpg8vxeay4i"]
 
-[ext_resource type="Texture2D" uid="uid://btaqvsvqfguh" path="res://icon.svg" id="1_ev0ep"]
-[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_p3c7e"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hadjs"]
+[ext_resource type="Texture2D" uid="uid://cj8dbap450uy6" path="res://assets/standing/frame-3.png" id="1_yglvd"]
+[ext_resource type="Texture2D" uid="uid://coqheurglv528" path="res://assets/standing/frame-2.png" id="2_j58mc"]
+[ext_resource type="Texture2D" uid="uid://xn5aefsltfof" path="res://assets/standing/frame-4.png" id="3_n7cbp"]
+[ext_resource type="Texture2D" uid="uid://8qc2taa6s7vd" path="res://assets/standing/frame-5.png" id="4_sade7"]
+[ext_resource type="Texture2D" uid="uid://cqktsakefuylv" path="res://assets/standing/frame-6.png" id="5_puok3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iexyk"]
-size = Vector2(24, 26.5)
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnrim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yglvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j58mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7cbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yglvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7cbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sade7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_puok3")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(120, -66)
-script = ExtResource("1_p3c7e")
+[sub_resource type="CircleShape2D" id="CircleShape2D_osl1q"]
+radius = 63.0079
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-48, 348)
-scale = Vector2(0.207031, 0.222656)
-texture = ExtResource("1_ev0ep")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hadjs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -55)
+scale = Vector2(0.150155, 0.134972)
+sprite_frames = SubResource("SpriteFrames_bnrim")
+animation = &"standing"
+autoplay = "standing"
+frame_progress = 0.448015
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-48, 349)
-shape = SubResource("RectangleShape2D_iexyk")
+position = Vector2(0, -55)
+shape = SubResource("CircleShape2D_osl1q")

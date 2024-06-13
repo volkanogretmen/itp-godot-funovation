@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbl4rxux1bp4b"]
+
+[ext_resource type="PackedScene" uid="uid://dylpg8vxeay4i" path="res://scenes/player.tscn" id="1_iestt"]
+[ext_resource type="Texture2D" uid="uid://chkqhaivphbeo" path="res://images/background2.jpeg" id="1_k3ecp"]
+[ext_resource type="PackedScene" uid="uid://dnupid0tqus2t" path="res://scenes/document.tscn" id="3_ho5f8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eb3pg"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(10, -327.5)
+scale = Vector2(0.788462, 0.795343)
+texture = ExtResource("1_k3ecp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(9, -328)
+
+[node name="Player" parent="." instance=ExtResource("1_iestt")]
+position = Vector2(-3, -19)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_eb3pg")
+
+[node name="Document" parent="." instance=ExtResource("3_ho5f8")]
+position = Vector2(68, -367)
