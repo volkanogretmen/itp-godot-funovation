@@ -1,7 +1,4 @@
-extends Sprite2D
-
-# Gravity force applied to the Area2D
-var gravity = 100.0
+extends Area2D
 
 # Velocity of the Area2D
 var velocity = Vector2()
@@ -15,4 +12,9 @@ func _process(delta):
 	velocity.y += gravity * delta
 	
 	# Move the Area2D
-	position += velocity * delta
+	position += velocity * delta * 0.3
+
+
+func _on_body_entered(body):
+	print("+1 document!")
+	queue_free()

@@ -7,9 +7,6 @@ var document_scene = preload("res://scenes/document.tscn") as PackedScene
 # Area within which to spawn documents
 @export var spawn_area: Vector2 = Vector2(800, 100)
 
-# Toevoegen in document script
-@onready var game_manager = %GameManager
-
 var _timer: float = 0.0
 
 func _ready():
