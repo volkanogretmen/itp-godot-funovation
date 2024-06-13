@@ -1,11 +1,14 @@
 extends Node2D
 
 # Path to the document scene
-@export var document_scene: PackedScene
+var document_scene = preload("res://scenes/document.tscn") as PackedScene
 # Time between spawns
 @export var spawn_interval: float = 1.0
 # Area within which to spawn documents
 @export var spawn_area: Vector2 = Vector2(800, 100)
+
+# Toevoegen in document script
+@onready var game_manager = %GameManager
 
 var _timer: float = 0.0
 

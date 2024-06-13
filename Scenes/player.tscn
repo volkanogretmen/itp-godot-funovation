@@ -1,14 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://dylpg8vxeay4i"]
+[gd_scene load_steps=14 format=3 uid="uid://dylpg8vxeay4i"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_hadjs"]
 [ext_resource type="Texture2D" uid="uid://cj8dbap450uy6" path="res://assets/standing/frame-3.png" id="1_yglvd"]
 [ext_resource type="Texture2D" uid="uid://coqheurglv528" path="res://assets/standing/frame-2.png" id="2_j58mc"]
+[ext_resource type="Texture2D" uid="uid://ji3hpvoakysf" path="res://assets/jumping/frame.png" id="2_y6men"]
 [ext_resource type="Texture2D" uid="uid://xn5aefsltfof" path="res://assets/standing/frame-4.png" id="3_n7cbp"]
+[ext_resource type="Texture2D" uid="uid://bcwtldk1kirlm" path="res://assets/running/frame-1.png" id="3_ylyxr"]
+[ext_resource type="Texture2D" uid="uid://0wq1b2l002bj" path="res://assets/running/frame-2.png" id="4_6b2q5"]
 [ext_resource type="Texture2D" uid="uid://8qc2taa6s7vd" path="res://assets/standing/frame-5.png" id="4_sade7"]
 [ext_resource type="Texture2D" uid="uid://cqktsakefuylv" path="res://assets/standing/frame-6.png" id="5_puok3"]
+[ext_resource type="Texture2D" uid="uid://npop7ja3ru1b" path="res://assets/running/frame-3.png" id="5_woybw"]
+[ext_resource type="Texture2D" uid="uid://cjihfkj5xb6ui" path="res://assets/running/frame-4.png" id="6_4n0kj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bnrim"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y6men")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ylyxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6b2q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_woybw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4n0kj")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_yglvd")
@@ -46,9 +76,8 @@ script = ExtResource("1_hadjs")
 position = Vector2(-4, -55)
 scale = Vector2(0.150155, 0.134972)
 sprite_frames = SubResource("SpriteFrames_bnrim")
-animation = &"standing"
+animation = &"jump"
 autoplay = "standing"
-frame_progress = 0.448015
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -55)

@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://dylpg8vxeay4i" path="res://scenes/player.tscn" id="1_iestt"]
 [ext_resource type="Texture2D" uid="uid://chkqhaivphbeo" path="res://images/background2.jpeg" id="1_k3ecp"]
-[ext_resource type="PackedScene" uid="uid://dnupid0tqus2t" path="res://scenes/document.tscn" id="3_ho5f8"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wngho"]
 [ext_resource type="PackedScene" uid="uid://bpcg7hxkydfxv" path="res://scenes/spawner.tscn" id="4_muhjr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eb3pg"]
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_wngho")
 
 [node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(10, -327.5)
@@ -27,5 +31,4 @@ shape = SubResource("WorldBoundaryShape2D_eb3pg")
 
 [node name="Spawner" parent="." instance=ExtResource("4_muhjr")]
 position = Vector2(6, -642)
-document_scene = ExtResource("3_ho5f8")
 spawn_interval = 0.3
